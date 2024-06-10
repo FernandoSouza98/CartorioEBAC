@@ -153,27 +153,33 @@ int main()//funçáo principal
 		printf("Escolha a opção desejada do menu:\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
+		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - sair do sistem\n\n");
 		printf("Opção: ");//fim do menu
 		
 		//Entrada de dados
 		scanf("%d",&opcao);//recebendo valor de opcao
-		
+		 
 		system("cls");//limpamdo tela
 		
 		//Saida de dados
 		switch (opcao)//inicio da selecao
 		{
 			case 1:
-			registro();
+				registro();
 			break;
 			
 			case 2:
-			consulta();
+				consulta();
 			break;
 			
 			case 3:
-			deletar();
+				deletar();
+			break;
+			
+			case 4:
+				printf("\n\nObrigado por utilizar o sistem!\n");
+				return(0);
 			break;
 			
 			default:
