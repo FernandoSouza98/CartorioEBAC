@@ -141,54 +141,78 @@ int main()//funçáo principal
 	//Definição de variaveis
 	int opcao=0;//variavel de registro
 	int laco=0;//variavel de contagem
+	char senhad[10]="a";//senha a ser digitada
+	int comp=0;//comparação para senhas
+	int cont=1;//reposta de saida do loop 
+		
+	setlocale(LC_ALL, "Portuguese");
 	
-	//Execução do programa
-	for(laco=1;laco==1;)//loop
+	while(cont == 1)
 	{
-		//Definição de tipo de texto
-		setlocale(LC_ALL, "Portuguese");
+		printf("### Cartório da EBAC ###\n\n");
+		printf("Login de adminstrador!\n\nDigite a senha: ");
+		scanf("%s",senhad);
 		
-		//Saida de texto
-		printf("### Cartório da EBAC ###\n\n");//inicio do menu
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n");
-		printf("\t4 - sair do sistem\n\n");
-		printf("Opção: ");//fim do menu
-		
-		//Entrada de dados
-		scanf("%d",&opcao);//recebendo valor de opcao
-		 
-		system("cls");//limpamdo tela
-		
-		//Saida de dados
-		switch (opcao)//inicio da selecao
-		{
-			case 1:
-				registro();
-			break;
-			
-			case 2:
-				consulta();
-			break;
-			
-			case 3:
-				deletar();
-			break;
-			
-			case 4:
-				printf("\n\nObrigado por utilizar o sistem!\n");
-				return(0);
-			break;
-			
-			default:
-			printf("\n\n\nEssa opção não esta disponível!\n\n\n\n");
-			system ("pause");
-			break;
-			
-		}//fim da selecao
+		comp = strcmp(senhad, "admin");
 		system("cls");
+		
+		if (comp == 0)
+		{
+			//Execução do programa
+			for(laco=1;laco=1;)//loop
+			{
+				//Definição de tipo de texto
+				
+				//Saida de texto
+				printf("### Cartório da EBAC ###\n\n");//inicio do menu
+				printf("Escolha a opção desejada do menu:\n\n");
+				printf("\t1 - Registrar nomes\n");
+				printf("\t2 - Consultar nomes\n");
+				printf("\t3 - Deletar nomes\n");
+				printf("\t4 - sair do sistem\n\n");
+				printf("Opção: ");//fim do menu
+			
+				//Entrada de dados
+				scanf("%d",&opcao);//recebendo valor de opcao
+			 
+				system("cls");//limpamdo tela
+			
+				//Saida de dados
+				switch (opcao)//inicio da selecao
+				{
+					case 1:
+						registro();
+					break;
+				
+					case 2:
+						consulta();
+					break;
+				
+					case 3:
+						deletar();
+					break;
+				
+					case 4:
+						printf("\n\nObrigado por utilizar o sistem!\n");
+						return(0);
+					break;
+					
+					default:
+					printf("\n\n\nEssa opção não esta disponível!\n\n\n\n");
+					system ("pause");
+					break;
+				
+				}//fim da selecao
+				system("cls");
+			}
+		}
+		else
+		{
+			printf("\nSenha incorreta!\n\nDeseja tentar novamente\n\n\t1 - Sim \n\t2 - Não\n\n");
+			scanf("%d",&cont);
+			system("cls");
+		}
+		
 	}
 	//Royalties
 	printf("\n\nEsse Softare é de Fernando Nogueira de Souza\n");
